@@ -22,7 +22,7 @@ body{
     border-radius: 5px;
 }
 
-#startBtn, #restartButton{
+#start-button, #restartButton{
     width: 135px;
     height: 35px;
     border-radius: 5px;

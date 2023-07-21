@@ -14,14 +14,20 @@
             <p>Welcome to the Land Down Under where kangaroos are vicious road killers!
             You are on a holiday, enjoying the scenery but watch out! Kangaroos often come onto the road! - Your job is to avoid collision with them Use the arrow keys to control your car.</p>
         </section>
-        <button type="button" id="startBtn">Start</button>
+        <button type="button" id="start-button">Start</button>
     </div>
     <div id="game-container">
         <div>
             <h2>Stats</h2>
-            <p>Record: 0</p>
-            <p>Score: <span id="score">0</span></p>
-            <p>Lives: <span id="lives">3</span></p>
+            <p>Record:
+                <span id="record"></span>
+            </p>
+            <p>Score: 
+                <span id="score">0</span>
+            </p>
+            <p>Lives:
+                <span id="lives">3</span>
+            </p>
         </div>
         <div id="game-screen"></div>
     </div>
@@ -30,5 +36,13 @@
         <h1>Game Over</h1>
         <button id="restartButton">Restart</button>
     </div>
+
+
+
+
+    <script src="../Javascript/game.js"></script>
+    <script src="../Javascript/obstacle.js"></script>
+    <script src="../Javascript/player.js"></script>
+    <script src="../Javascript/script.js"></script>
 </body>
 </html>
