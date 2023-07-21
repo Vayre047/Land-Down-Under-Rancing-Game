@@ -37,3 +37,13 @@ body{
     width: 40%;
     text-align: justify;
 }
+
+/* #game-screen{
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    animation: slide 5s linear infinite;
+} */
