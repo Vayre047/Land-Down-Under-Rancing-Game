@@ -1,0 +1,39 @@
+body{
+    width: 100%;
+    height: auto;
+}
+
+#titleStartPage{
+    text-align: center;
+    font-size: 24px;
+    font-family: Lucidatypewriter, monospace;
+}
+
+#startContainer, #game-container, #game-end{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+#imgIntro, .endGameImage{
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#startBtn, #restartButton{
+    width: 135px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid orangered;
+    background-color: orangered;
+    color: #fff;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+#initialText{
+    width: 40%;
+    text-align: justify;
+}
