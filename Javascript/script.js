@@ -5,18 +5,18 @@ window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");   // dull text?
 
-    startButton.addEventListener("click", function () {
-        startGame();
-    });
+  startButton.addEventListener("click", function () {
+    startGame();
+  });
 
-    let game;
+  let game;
 
-    function startGame(){
-        console.log("start game");
-        game = new Game();
+  function startGame() {
+    console.log("start game");
+    game = new Game();
 
-        game.start();
-    }
+    game.start();
+  }
 
 // Function that handles keydown events
     function handleKeydown(event) {          //dull text? 
@@ -29,7 +29,7 @@ window.onload = function () {
         ];
 
 
-         // Check if the pressed key is in the possibleKeystrokes array
+    // Check if the pressed key is in the possibleKeystrokes array
     if (possibleKeystrokes.includes(key)) {
         event.preventDefault();
   
