@@ -11,9 +11,9 @@ class Player{
         this.score = 0;
         this.record = 0;
 
-        this.verticallyPosition = 0;
+        this.directionX = 0;
 
-        this.horizontalPosition = 0;
+        this.directionY = 0;
 
         // Create a image element
         this.element = document.createElement("img");
@@ -30,8 +30,8 @@ class Player{
 
     move(){
         // It will update the position's player
-        this.left += this.horizontalPosition;
-        this.top += this.verticallyPosition;
+        this.left += this.directionX;
+        this.top += this.directionY;
 
         // if sum of the left and the width is greater than of gameScreen size
         if(this.left + this.width > this.gameScreen.offsetWidth){

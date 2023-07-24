@@ -70,7 +70,7 @@ window.onload = function () {
     ]
 
     // Check if the pressed key belongs to the array of possible keys
-    if(possibleKeystrokes.includes(key) && game){
+    if(possibleKeystrokes.includes(key)){
       // prevent the default key actions from happening
       // in this case, it's scroll-up / scroll-down / scroll-left / scroll-right in the browser window
       event.preventDefault();
