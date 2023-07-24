@@ -9,12 +9,27 @@ body{
     font-family: Lucidatypewriter, monospace;
 }
 
-#startContainer, #game-container, #game-end{
+#startContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 } 
+
+#game-intro{
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../Images/game-screen.png);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+}
+
+#end-game{
+    display: none;
+}
 
 #imgIntro, .endGameImage{
     width: 40%;
@@ -38,7 +53,8 @@ body{
     text-align: justify;
 }
 
-/* #game-screen{
+#game-screen{
+    background-image: url(../Images/game-screen.png);
     display: none;
     align-content: center;
     padding: 20px 0px;
@@ -46,4 +62,4 @@ body{
     position: relative;
     background-size: cover;
     animation: slide 5s linear infinite;
-} */
+}
