@@ -29,19 +29,12 @@ class Game {
 
     this.lives = 3;
 
-    // a flag used to track whether the game is over.
     this.gameIsOver = false;
   }
-
-  // This Game will have 3 methods
-
-  // Method 1
   start() {}
 
-  // Method 2
   gameLoop() {}
 
-  //Method 3
   update() {
     this.player.move();
   }

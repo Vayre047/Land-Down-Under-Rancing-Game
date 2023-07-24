@@ -32,6 +32,13 @@ class Player{
         // It will update the position's player
         this.left += this.horizontalPosition;
         this.top += this.verticallyPosition;
+
+        // if sum of the left and the width is greater than of gameScreen size
+        if(this.left + this.width > this.gameScreen.offsetWidth){
+            this.left = this.gameScreen.offsetWidth - this.width;
+        }else if(this.left <= 0){
+            this.left = 0;
+        }
     }
 
     getRecord(){
