@@ -28,7 +28,7 @@ class Player{
         this.gameScreen.appendChild(this.element);
     }
 
-    deslocation(){
+    move(){
         // It will update the position's player
         this.left += this.horizontalPosition;
         this.top += this.verticallyPosition;
