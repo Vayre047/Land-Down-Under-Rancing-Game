@@ -17,18 +17,28 @@ class Player{
 
         // Create a image element
         this.element = document.createElement("img");
-
-        // Give a image element a src 
         this.element.src = imgSrc;
-
-        // Give to image element a absolute position 
         this.element.style.position = "absolute";
-        this.element.style.left = `${this.left}px`;
-        this.element.style.top = `${this.top}`;
-        this.element.style.width = `${this.width}px`;
-        this.element.style.height = `${this.height}px`;
-
+        
+        this.element.style.width = `${width}px`;
+        this.element.style.height = `${height}px`;
+        this.element.style.left = `${left}px`;
+        this.element.style.top = `${top}px`;
+    
         this.gameScreen.appendChild(this.element);
+    }
+
+    deslocation(){
+        // It will update the position's player
+        this.left += this.horizontalPosition;
+        this.top += this.verticallyPosition;
+
+        // if sum of the left and the width is greater than of gameScreen size
+        if(this.left + this.width > this.gameScreen.offsetWidth){
+            this.left = this.gameScreen.offsetWidth - this.width;
+        }else if(this.left <= 0){
+            this.left = 0;
+        }
     }
 
     getRecord(){

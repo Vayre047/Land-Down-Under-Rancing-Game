@@ -30,19 +30,11 @@ class Game {
 
     this.lives = 3;
 
-    // A flag used to track whether the game is over.
     this.gameIsOver = false;
   }
 
-  // This Game will have 3 methods
+  start() {}
 
-  // Method 1
-  start() {
-    this.startScreen.style.display = "none";
-    this.gameScreen.style.display = "block";
-  }
-
-  // Method 2
   gameLoop() {}
 
   //Method 3  - REVIEW
@@ -87,18 +79,17 @@ class Game {
     }
   }
 
+  // Create a new method responsible for ending the game
+  endGame() {
+    this.player.element.remove();
+    this.obstacles.forEach((obstacle) => obstacle.element.remove());
 
-    // Create a new method responsible for ending the game
-    endGame() {
-        this.player.element.remove();
-        this.obstacles.forEach(obstacle => obstacle.element.remove());
-        
-        //Set the gameIsOver flag to true.
-        this.gameIsOver = true;
-    
-        // Hide game screen
-        this.gameScreen.style.display = "none";
-        // Show end game screen
-        this.gameEndScreen.style.display = "block";
-      }
+    //Set the gameIsOver flag to true.
+    this.gameIsOver = true;
+
+    // Hide game screen
+    this.gameScreen.style.display = "none";
+    // Show end game screen
+    this.gameEndScreen.style.display = "block";
+  }
 }
