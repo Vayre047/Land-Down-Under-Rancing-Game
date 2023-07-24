@@ -1,14 +1,15 @@
 class Game {
   //the 3 visual backgrounds
   constructor() {
-    this.startScreen = document.getElementById("game-intro");
+    this.startScreen = document.getElementById("startContainer");
     this.gameScreen = document.getElementById("game-screen");
     this.endScreen = document.getElementById("end-game");
 
-    //player - rcreate it in the next iteration  (but why?)
+    //player - create it in the next iteration          (but why?)
     // this.player = null;
 
     this.player = new Player(
+      "Tomas and Agnes",
       this.gameScreen,
       200,
       500,
@@ -17,7 +18,7 @@ class Game {
       "../Images/car.png"
     );
 
-    //style for the game board
+    //Style for the game board
     this.width = 500;
     this.height = 600;
 
