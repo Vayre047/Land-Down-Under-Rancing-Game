@@ -1,15 +1,9 @@
 //When clicking startButton, create a new instance of the Game class
 // & start the game by invoking the start() method:
 
-
 window.onload = function () {
     const startButton = document.getElementById("start-button");
-<<<<<<< HEAD
     const restartButton = document.getElementById("restart-button");   // dull text?
-    let game;
-=======
-    const restartButton = document.getElementById("restart-button");
->>>>>>> c6006244117ab14bdef957db9cb99c408a6c90c3
 
     startButton.addEventListener("click", function () {
         startGame();
@@ -23,8 +17,6 @@ window.onload = function () {
 
         game.start();
     }
-
-<<<<<<< HEAD
 
 // Function that handles keydown events
     function handleKeydown(event) {          //dull text? 
@@ -59,9 +51,4 @@ window.onload = function () {
       }
       window.addEventListener("keydown", handleKeydown);
     };
-        
-
-
-=======
->>>>>>> c6006244117ab14bdef957db9cb99c408a6c90c3
 };
