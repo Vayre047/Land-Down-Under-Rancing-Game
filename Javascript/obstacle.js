@@ -18,9 +18,13 @@ class Obstacle{
         this.element.style.height = `${this.height}px`;
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
-    
-        this.gameScreen.appendChild(this.element);
+
+     //append the obstacle element to the gameScreen.
+        this.gameScreen.appendChild(this.element); 
       }
+
+      
+      // The obstacle will use the 2 below methods:  updatePosition() and move()
 
       updatePosition() {
         // Update the obstacle's position based on the properties left and top
