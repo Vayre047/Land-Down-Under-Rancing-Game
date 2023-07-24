@@ -15,7 +15,7 @@ class Game {
       500,
       100,
       150,
-      "../Images/car.png"
+      "../Docs/Images/car.png"
     );
 
     //Style for the game board
