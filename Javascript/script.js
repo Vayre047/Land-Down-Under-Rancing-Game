@@ -4,12 +4,18 @@
 
 window.onload = function () {
     const startButton = document.getElementById("start-button");
+<<<<<<< HEAD
     const restartButton = document.getElementById("restart-button");   // dull text?
     let game;
+=======
+    const restartButton = document.getElementById("restart-button");
+>>>>>>> c6006244117ab14bdef957db9cb99c408a6c90c3
 
     startButton.addEventListener("click", function () {
         startGame();
     });
+
+    let game;
 
     function startGame(){
         console.log("start game");
@@ -18,6 +24,7 @@ window.onload = function () {
         game.start();
     }
 
+<<<<<<< HEAD
 
 // Function that handles keydown events
     function handleKeydown(event) {          //dull text? 
@@ -55,4 +62,6 @@ window.onload = function () {
         
 
 
+=======
+>>>>>>> c6006244117ab14bdef957db9cb99c408a6c90c3
 };
