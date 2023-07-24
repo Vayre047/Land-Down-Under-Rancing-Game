@@ -39,12 +39,34 @@ class Player{
         }else if(this.left <= 0){
             this.left = 0;
         }
+
+        this.actualPosition();
+    }
+
+    actualPosition(){
+        this.element.style.left = `${this.left}px`;
+        this.element.style.top = `${this.top}px`;
     }
 
     getRecord(){
         // If the score is greater than last record we will have a new record
         if(this.score > this.record){
             prompt("You beat your last record");
+        }
+    }
+
+    didHit(){
+        const playerPosition = this.element.getBoundingClientRect();
+        const obstaclePosition = obstacle.element.getBoundingClientRect();
+
+        if(playerPosition.left < obstaclePosition.right &&
+            playerPosition.right > obstaclePosition.left &&
+            playerPosition.top < obstaclePosition.bottom &&
+            playerPosition.bottom > obstaclePosition.top
+        ){
+            return false;
+        }else{
+            return true;
         }
     }
 }
