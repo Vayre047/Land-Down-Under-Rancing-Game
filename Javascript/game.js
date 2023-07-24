@@ -32,6 +32,7 @@ class Game {
 
     this.gameIsOver = false;
   }
+  
   start() {}
 
   gameLoop() {}
