@@ -6,7 +6,16 @@ class Game {
     this.endScreen = document.getElementById("end-game");
 
     //player - rcreate it in the next iteration  (but why?)
-    this.player = null;
+    // this.player = null;
+
+    this.player = new Player(
+      this.gameScreen,
+      200,
+      500,
+      100,
+      150,
+      "../Images/car.png"
+    );
 
     //style for the game board
     this.width = 500;
@@ -24,27 +33,16 @@ class Game {
     this.gameIsOver = false;
   }
 
+  // This Game will have 3 methods
 
-// This Game will have 3 methods
+  // Method 1
+  start() {}
 
-// Method 1
-start() {
+  // Method 2
+  gameLoop() {}
 
-
-}
-
-
-// Method 2
-gameLoop(){
-
-}
-
-
-//Method 3
-update(){
-
-}
-
-
-
+  //Method 3
+  update() {
+    this.player.move();
+  }
 }
