@@ -26,6 +26,8 @@ class Player {
     this.element.style.top = `${top}px`;
 
     this.gameScreen.appendChild(this.element);
+    // Adding sound effect upon collision with object   
+    this.sound = new Audio("./docs/sounds/oh_no.mp3")
   }
 
   move() {
@@ -39,7 +41,7 @@ class Player {
       // offsetWidth returns the layout width as a number
       if (this.left + this.width > this.gameScreen.offsetWidth) {
         this.left = this.gameScreen.offsetWidth - this.width;
-      } else if(this.left <= 0){
+      } else if(this.left < 0){
         this.left = 0;
       }
 
@@ -81,6 +83,9 @@ class Player {
       playerRect.top < obstacleRect.bottom &&
       playerRect.bottom > obstacleRect.top
     ) {
+        
+        // audio file - connects to the audio upon collision with objects
+        this.sound.play()
         // if the player collides return true
       return true;
     } else {

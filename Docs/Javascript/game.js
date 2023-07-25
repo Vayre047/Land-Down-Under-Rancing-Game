@@ -54,6 +54,12 @@ class Game {
 
     // Start the game loop
     this.gameLoop();
+
+    // Implementing a backgroundMusic
+    this.backgroundMusic = document.createElement("audio");
+    this.backgroundMusic.src = "./Docs/sounds/down_under.mp3";
+    this.gameScreen.appendChild(this.backgroundMusic);
+    this.backgroundMusic.play();
   }
 
   gameLoop() {
@@ -148,5 +154,10 @@ class Game {
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.endScreen.style.display = "block";
+
+
+    // if wanting to end backgroundMusic
+   // this.backgroundMusic.pause();
+   
   }
 }
