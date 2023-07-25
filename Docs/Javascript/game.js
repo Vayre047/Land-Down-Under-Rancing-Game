@@ -5,7 +5,7 @@ class Game {
     this.gameScreen = document.getElementById("game-intro");
     this.endScreen = document.getElementById("end-game");
 
-    //player - create it in the next iteration          (but why?)
+    //player - create it in the next iteration
     // this.player = null;
 
     this.player = new Player(
@@ -64,9 +64,13 @@ class Game {
     window.requestAnimationFrame(() => this.gameLoop());
   }
 
-  //Method 3  - REVIEW
   //This method is responsible for updating the game state during each loop iteration.
   update() {
+    let score = document.getElementById('score');
+    let lives = document.getElementById('lives');
+
+    score.innerHTML = this.score;
+    lives.innerHTML = this.lives;
     this.player.move();
 
     // Check for collision and if an obstacle is still on the screen
