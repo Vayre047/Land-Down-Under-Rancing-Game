@@ -1,84 +1,87 @@
-class Player{
-    constructor(name, gameScreen, left, top, width, height, imgSrc){
-        this.name = name;
-        // Id came from
-        this.gameScreen = gameScreen;
-        this.left = left;
-        this.top = top;
-        this.width = width;
-        this.height = height;
-        this.imgSrc = imgSrc;
-        this.score = 0;
-        this.record = 0;
+class Player {
+  constructor(name, gameScreen, left, top, width, height, imgSrc) {
+    this.name = name;
+    // Id came from
+    this.gameScreen = gameScreen;
+    this.left = left;
+    this.top = top;
+    this.width = width;
+    this.height = height;
+    this.imgSrc = imgSrc;
+    this.score = 0;
+    this.record = 0;
 
-        this.directionX = 0;
+    this.directionX = 0;
 
-        this.directionY = 0;
+    this.directionY = 0;
 
-        // Create a image element
-        this.element = document.createElement("img");
-        this.element.src = imgSrc;
-        this.element.style.position = "absolute";
-        
-        this.element.style.width = `${width}px`;
-        this.element.style.height = `${height}px`;
-        this.element.style.left = `${left}px`;
-        this.element.style.top = `${top}px`;
-    
-        this.gameScreen.appendChild(this.element);
+    // Create a image element
+    this.element = document.createElement("img");
+    this.element.src = imgSrc;
+    this.element.style.position = "absolute";
+
+    this.element.style.width = `${width}px`;
+    this.element.style.height = `${height}px`;
+    this.element.style.left = `${left}px`;
+    this.element.style.top = `${top}px`;
+
+    this.gameScreen.appendChild(this.element);
+  }
+
+  move() {
+    // It will update the position's player
+    this.left += this.directionX;
+    this.top += this.directionY;
+
+    // if sum of the left and the width is greater than of gameScreen size
+    if (this.left + this.width > this.gameScreen.offsetWidth) {
+      this.left = this.gameScreen.offsetWidth - this.width;
+    } else if (this.left < 0) {
+      this.left = 0;
+
+      //Top side
+      if (this.top + this.height > this.gameScreen.offsetHeight) {
+        this.top = this.gameScreen.offsetHeight - this.height;
+      }
+      //Bottom side
+      else if (this.top < 0) {
+        this.top = 0;
+      }
     }
 
-    move(){
-        // It will update the position's player
-        this.left += this.directionX;
-        this.top += this.directionY;
+    //changes
+    this.updatePosition();
+  }
 
-        // if sum of the left and the width is greater than of gameScreen size
-        if(this.left + this.width > this.gameScreen.offsetWidth){
-            this.left = this.gameScreen.offsetWidth - this.width;
-        }else if(this.left < 0){
-            this.left = 0;
+  updatePosition() {
+    this.element.style.left = `${this.left}px`;
+    this.element.style.top = `${this.top}px`;
+  }
 
-            //Top side
-            if(this.top + this.height > this.gameScreen.offsetHeight){
-                this.top = this.gameScreen.offsetHeight - this.height;
-            }
-            //Bottom side
-            else if(this.top < 0){
-                this.top = 0;
-            }
-        }
-
-        //changes
-        this.updatePosition();
+  getRecord() {
+    // If the score is greater than last record we will have a new record
+    if (this.score > this.record) {
+      prompt("You beat your last record");
     }
+  }
 
-    updatePosition(){
-        this.element.style.left = `${this.left}px`;
-        this.element.style.top = `${this.top}px`;
-    }
-
-    getRecord(){
-        // If the score is greater than last record we will have a new record
-        if(this.score > this.record){
-            prompt("You beat your last record");
-        }
-    }
-
-    didCollide(obstacle){
+  didCollide(obstacle) {
     // define it as a rectangle and give left, right, top and bottom properties
     //getBoundingClientRect() returns info about top, left, right, bottom, width, height, x and y position of the HTML element
-        const playerRect = this.element.getBoundingClientRect();
-        const obstacleRect = obstacle.element.getBoundingClientRect();
+    const playerRect = this.element.getBoundingClientRect();
+    const obstacleRect = obstacle.element.getBoundingClientRect();
 
-        if(playerRect.left < obstacleRect.right &&
-            playerRect.right > obstacleRect.left &&
-            playerRect.top < obstacleRect.bottom &&
-            playerRect.bottom > obstacleRect.top
-        ){
-            return false;
-        }else{
-            return true;
-        }
+    if (
+        // checking if the player is "toucing" with the obstacle 
+      playerRect.left < obstacleRect.right &&
+      playerRect.right > obstacleRect.left &&
+      playerRect.top < obstacleRect.bottom &&
+      playerRect.bottom > obstacleRect.top
+    ) {
+        // if the player collides return true
+      return true;
+    } else {
+      return false;
     }
+  }
 }

@@ -8,23 +8,31 @@ class Game {
     //player - create it in the next iteration
     // this.player = null;
 
+    // player details
     this.player = new Player(
       "Tomas and Agnes",
       this.gameScreen,
       200,
-      500,
+      300,
       100,
       150,
       "../Docs/Images/car.png"
     );
 
     //Style for the game board
-    this.width = 500;
-    this.height = 600;
+    this.width = 600;
+    this.height = 700;
 
-    // MVP if we have time we create more than one obstacle!
-    this.obstacle1 = [];
+    // MVP to be completed first - if time allows it more obstacles will be added
+    this.kangaroosArray = [];
+    this.joeysArray = [];
+
     // this.obstacle2 = [];
+
+    // flag to give info if we're pushing an obstacle   <-----------------
+    this.isPushingObstacle = false;
+    this.isPushingJoeys = false;
+
 
     this.score = 0;
 
@@ -59,61 +67,79 @@ class Game {
     // requestAnimationFrame is a JS method that
     // updates information of your screen
 
-    // like am old movie. You have the tape that is nothing more thant photographs (frame). requestAnimationFrame is going to display, clear and display next photograph in order to create animation.
-
+    // like an old movie. You have the tape that is nothing more thant photographs (frame). requestAnimationFrame is going to display, clear and display next photograph in order to create animation.
     window.requestAnimationFrame(() => this.gameLoop());
   }
 
   //This method is responsible for updating the game state during each loop iteration.
   update() {
-    let score = document.getElementById('score');
-    let lives = document.getElementById('lives');
+    let score = document.getElementById("score");
+    let lives = document.getElementById("lives");
 
+    // Score and lives
     score.innerHTML = this.score;
     lives.innerHTML = this.lives;
+
+    // Call player move function
     this.player.move();
 
     // Check for collision and if an obstacle is still on the screen
-    for (let i = 0; i < this.obstacle1.length; i++) {
-      const obstacle = this.obstacle1[i];
-      obstacle.move();
+    for (let i = 0; i < this.kangaroosArray.length; i++) {
+      const kangarooEnemy = this.kangaroosArray[i];
+      kangarooEnemy.move();
 
-      // If the player's car collides with an obstacle
-      /*if (this.player.didCollide(obstacle)) {
-        // Remove the obstacle element from the DOM
-        obstacle.element.remove();
-        // Remove obstacle object from the array
-        this.obstacle1.splice(i, 1);
+      //Q: why do we comment the below out?
+
+      // If the player's car collides with an kangarooEnemy    //  <-----------------
+      if (this.player.didCollide(kangarooEnemy)) {
+        // Remove the kangarooEnemy element from the DOM
+        kangarooEnemy.element.remove();
+        // Remove kangarooEnemy object from the array
+        this.kangaroosArray.splice(i, 1);
         // Reduce player's lives by 1
+        console.log("collision");
         this.lives--;
-        // Update the counter variable to account for the removed obstacle
-        i--;
-      }*/ // If the obstacle is off the screen (at the bottom)
-      if (obstacle.top > this.height) {
+      }
+
+      // If the kangarooEnemy is off the screen (at the bottom)
+      if (kangarooEnemy.top > this.height) {
         // Increase the score by 1
         this.score++;
-        // Remove the obstacle from the DOM
-        obstacle.element.remove();
-        // Remove obstacle object from the array
-        this.obstacle1.splice(i, 1);
-        // Update the counter variable to account for the removed obstacle
-        i--;
+        // Remove the kangarooEnemy from the DOM
+        kangarooEnemy.element.remove();
+        // Remove kangarooEnemy object from the array
+        this.kangaroosArray.splice(i, 1);
+        // Update the counter variable to account for the removed kangarooEnemy
       }
     }
-    // Update obstacle1
-    if (!this.obstacle1.length && !this.isPushingObstacle) {
+
+    // If the lives are 0, end the game
+    if (this.lives === 0) {
+      this.endGame();
+    }
+
+    // Update kangaroosArray
+    // Create a new kangarooEnemy based on a random probability (this will give a defined delay for the kangarooEnemy to appear)
+
+    // only when there is no other kangarooEnemys on the screen
+    if (!this.kangaroosArray.length && !this.isPushingObstacle) {
+      //  <---------------------------
       this.isPushingObstacle = true; //
       setTimeout(() => {
-        this.obstacle1.push(new Obstacle(this.gameScreen));
+        this.kangaroosArray.push(new Kangaroo(this.gameScreen));
         this.isPushingObstacle = false;
-      }, 500);
+        console.log(this.kangaroosArray);
+      }, 1000);
     }
   }
 
   // Create a new method responsible for ending the game
   endGame() {
-    this.player.element.remove();
-    this.obstacle1.forEach((obstacle) => obstacle.element.remove());
+    //remove player
+    this.player.element.remove(); // // remove all obstacles
+    this.kangaroosArray.forEach((kangarooEnemy) =>
+      kangarooEnemy.element.remove()
+    );
 
     //Set the gameIsOver flag to true.
     this.gameIsOver = true;
@@ -121,6 +147,6 @@ class Game {
     // Hide game screen
     this.gameScreen.style.display = "none";
     // Show end game screen
-    this.gameEndScreen.style.display = "block";
+    this.endScreen.style.display = "block";
   }
 }
