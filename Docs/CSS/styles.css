@@ -6,6 +6,7 @@ body{
 #titleStartPage{
     text-align: center;
     font-size: 24px;
+    font-weight: bold;
     font-family: Lucidatypewriter, monospace;
 }
 
@@ -14,12 +15,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
 } 
 
 #game-intro{
     display: none;
     align-content: center;
-    padding: 20px 0px;
+    padding: 10px 0px;
     overflow: hidden;
     position: relative;
     background-image: url(../Images/game-screen.png);
@@ -61,5 +63,20 @@ body{
     overflow: hidden;
     position: relative;
     background-size: cover;
-    animation: slide 5s linear infinite;
+    animation: slide 5s linear infinite; /* speed of animation loop*/
+
+
 }
+
+    @keyframes slide {
+        0% {
+          background-position: 0 -1000px;  /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+        }
+        95% {
+          background-position: 0 0; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+        }
+        100% {
+          background-position: 0 50px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+        }
+      
+    }

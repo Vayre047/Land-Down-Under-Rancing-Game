@@ -2,15 +2,15 @@
 // & start the game by invoking the start() method:
 window.onload = function () {
   const startButton = document.getElementById("start-button");
-  const restartButton = document.getElementById("restart-button");
+  const restartButton = document.getElementById("restartButton");
+
+  let game;
 
   startButton.addEventListener("click", function () {
     startGame();
   });
 
-  let game; 
-
-  restartButton.addEventListener('click', () => {
+  restartButton.addEventListener("click", function () {
     location.reload();
   });
 
@@ -23,35 +23,35 @@ window.onload = function () {
   }
 
   // Function that handles keydown (pressing a key) events
-  function handleKeyDown(event){
+  function handleKeyDown(event) {
     const key = event.key;
-    const possibleKeystrokes = [
+    const possibleKeyStrokes = [
       "ArrowLeft",
       "ArrowUp",
       "ArrowRight",
-      "ArrowDown"
-    ]
+      "ArrowDown",
+    ];
 
     // Check if the pressed key belongs to the array of possible keys
-    if(possibleKeystrokes.includes(key)){
+    if (possibleKeyStrokes.includes(key)) {
       // prevent the default key actions from happening
       // in this case, it's scroll-up / scroll-down / scroll-left / scroll-right in the browser window
       event.preventDefault();
 
       // Only when we have a game loaded, we can move the play
-      if(game){
-        switch(key){
+      if (game) {
+        switch (key) {
           case "ArrowLeft":
-            game.player.directionX = -1;
+            game.player.directionX = -5;
             break;
           case "ArrowUp":
-            game.player.directionY = -1;
+            game.player.directionY = -5;
             break;
           case "ArrowRight":
-            game.player.directionX = 1;
+            game.player.directionX = 5;
             break;
           case "ArrowDown":
-            game.player.directionY = 1;
+            game.player.directionY = 5;
             break;
         }
       }
@@ -60,24 +60,24 @@ window.onload = function () {
 
   // Function that handles keyup (releasing the key) events
   // Function that handles keydown (pressing a key) events
-  function handleKeyUp(event){
+  function handleKeyUp(event) {
     const key = event.key;
-    const possibleKeystrokes = [
+    const possibleKeyStrokes = [
       "ArrowLeft",
       "ArrowUp",
       "ArrowRight",
-      "ArrowDown"
-    ]
+      "ArrowDown",
+    ];
 
     // Check if the pressed key belongs to the array of possible keys
-    if(possibleKeystrokes.includes(key)){
+    if (possibleKeyStrokes.includes(key)) {
       // prevent the default key actions from happening
       // in this case, it's scroll-up / scroll-down / scroll-left / scroll-right in the browser window
       event.preventDefault();
 
       // Only when we have a game loaded, we can move the play
-      if(game){
-        switch(key){
+      if (game) {
+        switch (key) {
           case "ArrowLeft":
             game.player.directionX = 0;
             break;

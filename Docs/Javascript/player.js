@@ -36,14 +36,24 @@ class Player{
         // if sum of the left and the width is greater than of gameScreen size
         if(this.left + this.width > this.gameScreen.offsetWidth){
             this.left = this.gameScreen.offsetWidth - this.width;
-        }else if(this.left <= 0){
+        }else if(this.left < 0){
             this.left = 0;
+
+            //Top side
+            if(this.top + this.height > this.gameScreen.offsetHeight){
+                this.top = this.gameScreen.offsetHeight - this.height;
+            }
+            //Bottom side
+            else if(this.top < 0){
+                this.top = 0;
+            }
         }
 
-        this.actualPosition();
+        //changes
+        this.updatePosition();
     }
 
-    actualPosition(){
+    updatePosition(){
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
     }
@@ -55,14 +65,16 @@ class Player{
         }
     }
 
-    didHit(){
-        const playerPosition = this.element.getBoundingClientRect();
-        const obstaclePosition = obstacle.element.getBoundingClientRect();
+    didCollide(obstacle){
+    // define it as a rectangle and give left, right, top and bottom properties
+    //getBoundingClientRect() returns info about top, left, right, bottom, width, height, x and y position of the HTML element
+        const playerRect = this.element.getBoundingClientRect();
+        const obstacleRect = obstacle.element.getBoundingClientRect();
 
-        if(playerPosition.left < obstaclePosition.right &&
-            playerPosition.right > obstaclePosition.left &&
-            playerPosition.top < obstaclePosition.bottom &&
-            playerPosition.bottom > obstaclePosition.top
+        if(playerRect.left < obstacleRect.right &&
+            playerRect.right > obstacleRect.left &&
+            playerRect.top < obstacleRect.bottom &&
+            playerRect.bottom > obstacleRect.top
         ){
             return false;
         }else{

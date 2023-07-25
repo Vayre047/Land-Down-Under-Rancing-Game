@@ -5,14 +5,15 @@ class Obstacle{
 
       // creating a random positioning of the obstacle
       this.left = Math.floor(Math.random() * 300 + 70);
+      // Determining the width and height of the obstacle
       this.top = 0;
-      this.width = 100;
+      this.width = 150;
       this.height = 150;
       this.element = document.createElement("img");
 
 
       // creating the HTML element and default styling
-      this.element.src = "../Docs/Images/kangaroo-64.png";
+      this.element.src = "../Docs/Images/kangaroo.png";
       this.element.style.position = "absolute";
       this.element.style.width = `${this.width}px`;
       this.element.style.height = `${this.height}px`;
@@ -32,7 +33,7 @@ class Obstacle{
     
       move() {
         // Move the obstacle down by 3px
-        this.top += 3;
+        this.top += 5;
         // Update the obstacle's position on the screen
         this.updatePosition();
       }
