@@ -1,6 +1,7 @@
 body{
     width: 100%;
     height: auto;
+    background: linear-gradient(to top right, #ffe0b3, #d2a679);
 }
 
 #titleStartPage{
@@ -25,7 +26,8 @@ body{
     overflow: hidden;
     position: relative;
     background-image: url(../Images/game-screen.png);
-    background-size: cover;
+    justify-content: center;
+    background-size: contain;
     animation: slide 5s linear infinite;
 }
 
@@ -33,10 +35,13 @@ body{
     display: none;
 }
 
-#imgIntro, .endGameImage{
-    width: 40%;
-    height: auto;
+#imgIntro{
+    background-size: cover;
     border-radius: 5px;
+}
+
+.endGameImage{
+    border-radius: 5px;   
 }
 
 #start-button, #restartButton{
@@ -68,15 +73,15 @@ body{
 
 }
 
-    @keyframes slide {
-        0% {
-          background-position: 0 -1000px;  /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-        }
-        95% {
-          background-position: 0 0; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-        }
-        100% {
-          background-position: 0 50px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-        }
-      
+@keyframes slide {
+    0% {
+      background-position: 0 -1000px;  /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
     }
+    95% {
+      background-position: 0 0; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+    }
+    100% {
+      background-position: 0 50px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+    }
+  
+}
