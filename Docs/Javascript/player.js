@@ -29,28 +29,31 @@ class Player {
   }
 
   move() {
-    // It will update the position's player
-    this.left += this.directionX;
-    this.top += this.directionY;
+    // Update player's car position based on directionX and directionY
+      this.left += this.directionX;
+      this.top += this.directionY;
+  
+      // Ensure the player's car stays within the game screen
+  
+      // handles right and left  side
+      // offsetWidth returns the layout width as a number
+      if (this.left + this.width > this.gameScreen.offsetWidth) {
+        this.left = this.gameScreen.offsetWidth - this.width;
+      } else if(this.left <= 0){
+        this.left = 0;
+      }
 
-    // if sum of the left and the width is greater than of gameScreen size
-    if (this.left + this.width > this.gameScreen.offsetWidth) {
-      this.left = this.gameScreen.offsetWidth - this.width;
-    } else if (this.left < 0) {
-      this.left = 0;
-
-      //Top side
+      // handles bottom and top side
+      // offsetHeight returns the layout height as a number
       if (this.top + this.height > this.gameScreen.offsetHeight) {
         this.top = this.gameScreen.offsetHeight - this.height;
       }
-      //Bottom side
       else if (this.top < 0) {
-        this.top = 0;
+        this.top = 0; // top border
       }
-    }
-
-    //changes
-    this.updatePosition();
+  
+      // Update the player's car position on the screen
+      this.updatePosition();
   }
 
   updatePosition() {
