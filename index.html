@@ -9,7 +9,7 @@
   <body>
     <div id="startContainer">
       <h3 id="titleStartPage">Land Down Under</h3>
-      <img  id="imgIntro" src="/Docs/Images/backgroundStarPage.jpeg" alt="Background Start Image" />
+      <img  id="imgIntro" src="/Docs/Images/backgroundStarPage.jpeg" height="450px" alt="Background Start Image" />
       <section id="initialText">
         <p>Welcome to the Land Down Under where kangaroos are vicious road killers! You are on a holiday, enjoying the scenery but watch out! Kangaroos often come onto the road! Your task is to avoid collision with them! Use the arrow keys to control your car.</p>
       </section>
@@ -35,10 +35,12 @@
     </div>
     <!-- #end-game is initially hidden using CSS style display: none -->
     <div id="end-game">
+      <div class="div-subclass">
       <img src="/Docs/Images/end-game.jpeg" alt="Please try in another season" class="endGameImage" />
       <h1>Game Over</h1>
-      <button id="restartButton">Restart</button>
+      <button id="restartButton"> Try again</button>
     </div>
+  </div>
 
     <script type="text/javascript" src="/Docs/Javascript/obstacle.js"></script>
     <script type="text/javascript" src="/Docs/Javascript/player.js"></script>
