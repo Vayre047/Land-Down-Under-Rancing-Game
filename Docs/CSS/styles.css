@@ -1,88 +1,111 @@
+<<<<<<< HEAD
 body{
     width: 100%;
     height: auto;
     background: linear-gradient(to top right, #ffe0b3, #d2a679);
     overflow-x: hidden;
+=======
+body {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to top right, #ffe0b3, #d2a679);
+>>>>>>> 5b1a1e5ef6f6ace8485e239302d4250b98423f0b
 }
 
-#titleStartPage{
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: Lucidatypewriter, monospace;
+#titleStartPage {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Lucidatypewriter, monospace;
 }
 
-#startContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-} 
-
-#game-intro{
-    display: none;
-    align-content: center;
-    padding: 10px 0px;
-    overflow: hidden;
-    position: relative;
-    background-image: url(../Images/game-screen.png);
-    justify-content: center;
-    background-size: contain;
-    animation: slide 5s linear infinite;
+#startContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  height: 570px; /*Tiago advice - put height in px (cuz there's no limit) */
+  margin: 5%;
 }
 
-#end-game{
-    display: none;
+#game-intro {
+  display: none;
+  align-content: center;
+  padding: 10px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../Images/game-screen.png);
+  justify-content: center;
+  background-size: contain;
+  animation: slide 5s linear infinite;
 }
 
-#imgIntro{
-    background-size: cover;
-    border-radius: 5px;
+#end-game {
+  display: none; /* seperating screens*/
+  flex-direction: row;
+  justify-content: center; /*moving the whole div to the center */
 }
 
-.endGameImage{
-    border-radius: 5px;   
+.div-subclass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* image to center*/
+  align-items: center;  /* items to center - horizontally*/
+  width: 50%;
 }
 
-#start-button, #restartButton{
-    width: 135px;
-    height: 35px;
-    border-radius: 5px;
-    border: 1px solid orangered;
-    background-color: orangered;
-    color: #fff;
-    font-size: 15px;
-    margin-top: 25px;
+#imgIntro {
+  background-size: cover;
+  border-radius: 5px;
 }
 
+<<<<<<< HEAD
 #initialText{
     width: 52.5%;
     text-align: justify;
+=======
+.endGameImage {
+  border-radius: 5px;
+>>>>>>> 5b1a1e5ef6f6ace8485e239302d4250b98423f0b
 }
 
-#game-screen{
-    background-image: url(../Images/game-screen.png);
-    display: none;
-    align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
-    position: relative;
-    background-size: cover;
-    animation: slide 5s linear infinite; /* speed of animation loop*/
+#start-button,
+#restartButton {
+  width: 135px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 25px;
+}
 
+#initialText {
+  width: 40%;
+  text-align: justify;
+}
 
+#game-screen {
+  background-image: url(../Images/game-screen.png);
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  animation: slide 5s linear infinite; /* speed of animation loop*/
 }
 
 @keyframes slide {
-    0% {
-      background-position: 0 -1000px;  /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-    }
-    95% {
-      background-position: 0 0; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-    }
-    100% {
-      background-position: 0 50px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
-    }
-  
+  0% {
+    background-position: 0 -1000px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+  }
+  95% {
+    background-position: 0 0; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+  }
+  100% {
+    background-position: 0 50px; /* to change to horizontal - swap around 0 and 1000 which represent X and Y */
+  }
 }
