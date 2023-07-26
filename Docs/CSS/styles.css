@@ -2,6 +2,7 @@ body{
     width: 100%;
     height: auto;
     background: linear-gradient(to top right, #ffe0b3, #d2a679);
+    overflow-x: hidden;
 }
 
 #titleStartPage{
@@ -56,7 +57,7 @@ body{
 }
 
 #initialText{
-    width: 40%;
+    width: 52.5%;
     text-align: justify;
 }
 
