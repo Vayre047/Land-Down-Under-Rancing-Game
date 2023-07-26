@@ -59,6 +59,15 @@ class Game {
     this.backgroundMusic.src = "./Docs/sounds/down_under.mp3";
     this.gameScreen.appendChild(this.backgroundMusic);
     this.backgroundMusic.play();
+
+    if(localStorage.getItem("record") != 0){
+      document.getElementById("record").innerHTML = localStorage.getItem("record");
+    }
+
+   // let local = localStorage.getItem("record");
+
+    //record.innerHTML = local;
+
   }
 
   gameLoop() {
@@ -124,7 +133,7 @@ class Game {
 
         // Remove kangarooEnemy object from the array
         this.kangaroosArray.splice(i, 1);
-        
+
       }
     }
 
@@ -135,8 +144,8 @@ class Game {
 
     //updating new kangaroos from kangaroo class, if there's no kangaroo in screen
     if (!this.kangaroosArray.length && !this.isPushingObstacle) {
-      
-      this.isPushingObstacle = true; 
+
+      this.isPushingObstacle = true;
 
       setTimeout(() => {
         this.kangaroosArray.push(new Kangaroo(this.gameScreen));
@@ -187,8 +196,8 @@ class Game {
 
     //updating new joeys from joeys class, if there's no joeys in screen
     if (!this.joeysArray.length && !this.isPushingJoeys) {
-      
-      this.isPushingJoeys = true; 
+
+      this.isPushingJoeys = true;
 
       setTimeout(() => {
         this.joeysArray.push(new KangarooJoey(this.gameScreen));
@@ -228,7 +237,7 @@ class Game {
 
         // Remove kangarooEnemy object from the array
         this.rooRooArray.splice(i, 1);
-        
+
       }
     }
 
@@ -238,8 +247,8 @@ class Game {
 
     //updating new rooroo from joeys class, if there's no rooroo in screen
     if (!this.rooRooArray.length && !this.isPushingRooRoo) {
-      
-      this.isPushingRooRoo = true; 
+
+      this.isPushingRooRoo = true;
 
       setTimeout(() => {
         this.rooRooArray.push(new RooRoo(this.gameScreen));
@@ -258,9 +267,16 @@ class Game {
     this.kangaroosArray.forEach((kangarooEnemy) => kangarooEnemy.element.remove());
     this.joeysArray.forEach((kangarooEnemy) => kangarooEnemy.element.remove());
     this.rooRooArray.forEach((kangarooEnemy) => kangarooEnemy.element.remove());
-    
+
     //Set the gameIsOver flag to true.
     this.gameIsOver = true;
+
+    let score = document.getElementById("score");
+    let record = document.getElementById("record");
+
+    if(score.innerHTML > record.innerHTML){
+      localStorage.setItem("record", score.innerHTML);
+    }
 
     // Hide game screen
     this.gameScreen.style.display = "none";
