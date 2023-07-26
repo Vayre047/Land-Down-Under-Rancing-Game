@@ -266,7 +266,6 @@ class Game {
       localStorage.setItem("record", score.innerHTML);
     }
 
-    
     // Hide game screen
     this.gameScreen.style.display = "none";
 
