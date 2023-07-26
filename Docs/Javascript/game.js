@@ -59,6 +59,15 @@ class Game {
     this.backgroundMusic.src = "./Docs/sounds/down_under.mp3";
     this.gameScreen.appendChild(this.backgroundMusic);
     this.backgroundMusic.play();
+
+    if (localStorage.getItem("record") != 0) {
+      document.getElementById("record").innerHTML =
+        localStorage.getItem("record");
+    }
+
+    // let local = localStorage.getItem("record");
+
+    //record.innerHTML = local;
   }
 
   gameLoop() {
@@ -250,6 +259,14 @@ class Game {
     //Set the gameIsOver flag to true.
     this.gameIsOver = true;
 
+    let score = document.getElementById("score");
+    let record = document.getElementById("record");
+
+    if (score.innerHTML > record.innerHTML) {
+      localStorage.setItem("record", score.innerHTML);
+    }
+
+    
     // Hide game screen
     this.gameScreen.style.display = "none";
 
