@@ -7,9 +7,12 @@ body {
 
 #titleStartPage {
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   font-family: Lucidatypewriter, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;  
+  
 }
 
 #startContainer {
