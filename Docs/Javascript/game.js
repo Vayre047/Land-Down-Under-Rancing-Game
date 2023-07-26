@@ -259,11 +259,11 @@ class Game {
     //Set the gameIsOver flag to true.
     this.gameIsOver = true;
 
-    let score = document.getElementById("score");
-    let record = document.getElementById("record");
+    let score = parseInt(document.getElementById("score").innerHTML);
+    let record = parseInt(document.getElementById("record").innerHTML);
 
-    if (score.innerHTML > record.innerHTML) {
-      localStorage.setItem("record", score.innerHTML);
+    if (score > record) {
+      localStorage.setItem("record", score);
     }
 
     // Hide game screen
