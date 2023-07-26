@@ -3,6 +3,9 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restartButton");
+ 
+
+  const endScreen = document.getElementById("end-game");
 
   let game;
 
@@ -13,6 +16,13 @@ window.onload = function () {
   restartButton.addEventListener("click", function () {
     location.reload();
   });
+
+  // Implementing creditdButton
+  /* creditsButton1.addEventListener("click", function () {
+    creditsButton1.style.display = "flex";
+    end
+
+  }); */
 
   function startGame() {
     console.log("start game");

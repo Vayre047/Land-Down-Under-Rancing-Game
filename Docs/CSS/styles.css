@@ -22,6 +22,10 @@ body {
   margin: 5%;
 }
 
+#aboutCredits {
+  display: none;
+}
+
 #game-intro {
   display: none;
   align-content: center;
@@ -59,10 +63,16 @@ body {
 }
 .endGameImage {
   border-radius: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fontFam {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #start-button,
-#restartButton {
+#restartButton,
+#creditsButton {
   width: 135px;
   height: 35px;
   border-radius: 5px;
@@ -71,6 +81,11 @@ body {
   color: #fff;
   font-size: 15px;
   margin-top: 25px;
+}
+
+#wrap {
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #initialText {
