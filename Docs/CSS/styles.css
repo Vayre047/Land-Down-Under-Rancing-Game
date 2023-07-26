@@ -39,7 +39,13 @@ body {
   justify-content: center;
   background-size: contain;
   animation: slide 5s linear infinite;
+  border-color: orangered;
+  border: 2px solid;
+  
 }
+
+
+
 
 #end-game {
   display: none; /* seperating screens*/
