@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-body{
-    width: 100%;
-    height: auto;
-    background: linear-gradient(to top right, #ffe0b3, #d2a679);
-    overflow-x: hidden;
-=======
 body {
   width: 100%;
   height: auto;
   background: linear-gradient(to top right, #ffe0b3, #d2a679);
->>>>>>> 5b1a1e5ef6f6ace8485e239302d4250b98423f0b
+  overflow-x: hidden;
 }
 
 #titleStartPage {
@@ -51,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; /* image to center*/
-  align-items: center;  /* items to center - horizontally*/
+  align-items: center; /* items to center - horizontally*/
   width: 50%;
 }
 
@@ -60,14 +53,12 @@ body {
   border-radius: 5px;
 }
 
-<<<<<<< HEAD
-#initialText{
-    width: 52.5%;
-    text-align: justify;
-=======
+#initialText {
+  width: 52.5%;
+  text-align: justify;
+}
 .endGameImage {
   border-radius: 5px;
->>>>>>> 5b1a1e5ef6f6ace8485e239302d4250b98423f0b
 }
 
 #start-button,
