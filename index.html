@@ -16,23 +16,28 @@
       <button id="start-button">Start</button>
     </div>
     <!-- Shown on game start screen  - Image placed above in body -->
-    <div id="game-intro">
-      <div class="fontFam">
-        <h2>Stats</h2>
-        <p>Record:
-          <span id="record">0</span>
-        </p>
-        <p>Score:
-          <span id="score">0</span>
-        </p>
-        <p>Lives:
-          <span id="lives">3</span>
-        </p>
-      </div>
+    
+    
       <!-- place to add game container if need be - after game-intro and before game-screen-->
       <!-- Main game screen - for now missing elements are the lives and score  -->
-      <div id="game-screen"></div>
+      <div id="gameContainer">
+        <div id="fontFam">
+          <h2>Stats</h2>
+          <p>Record:
+            <span id="record">0</span>
+          </p>
+          <p>Score:
+            <span id="score">0</span>
+          </p>
+          <p>Lives:
+            <span id="lives">3</span>
+          </p>
+        </div>
+        <div id="game-intro"></div>
+       
+      </div>
     </div>
+    
     <!-- #end-game is initially hidden using CSS style display: none -->
     
     <div id="end-game">

@@ -4,6 +4,7 @@ class Game {
     this.startScreen = document.getElementById("startContainer");
     this.gameScreen = document.getElementById("game-intro");
     this.endScreen = document.getElementById("end-game");
+    this.statusScreen = document.getElementById("fontFam");
 
     // Player - create it in the next iteration
     // this.player = null;
@@ -14,14 +15,14 @@ class Game {
       this.gameScreen,
       200,
       300,
-      100,
-      150,
+      70,
+      120,
       "../Docs/Images/car.png"
     );
 
     //Style for the game board
-    this.width = 600;
-    this.height = 700;
+    this.width = 500;
+    this.height = 620;
 
     // MVP to be completed first - if time allows it more obstacles will be added
     this.kangaroosArray = [];
@@ -35,7 +36,7 @@ class Game {
 
     this.score = 0;
 
-    this.lives = 3;
+    this.lives = 5;
 
     this.gameIsOver = false;
   }
@@ -48,8 +49,12 @@ class Game {
     // Hide the start screen
     this.startScreen.style.display = "none";
 
+    this.statusScreen.style.display = "none";
+
     // Show the game screen
-    this.gameScreen.style.display = "block";
+    this.gameScreen.style.display = "flex";
+    // Show the status screen
+    this.statusScreen.style.display = "flex";
 
     // Start the game loop
     this.gameLoop();

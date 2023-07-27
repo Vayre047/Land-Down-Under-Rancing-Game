@@ -7,8 +7,8 @@ class Kangaroo {
     this.left = Math.floor(Math.random() * 300 + 70);
     // Determining the width and height of the obstacle
     this.top = 0;
-    this.width = 150;
-    this.height = 150;
+    this.width = 90;
+    this.height = 110;
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
@@ -48,8 +48,8 @@ class KangarooJoey {
     this.left = 600;
     // Determining the width and height of the obstacle
     this.top = Math.floor(Math.random() * 300 + 70);
-    this.width = 150;
-    this.height = 150;
+    this.width = 90;
+    this.height = 110;
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
@@ -93,8 +93,8 @@ class RooRoo {
     
     // top refers to the height 
     this.top = Math.floor(Math.random() * 300 + 70);
-    this.width = 150;
-    this.height = 150;
+    this.width = 100;
+    this.height = 130;
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling

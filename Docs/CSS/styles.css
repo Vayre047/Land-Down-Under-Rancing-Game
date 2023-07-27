@@ -10,9 +10,8 @@ body {
   font-size: 28px;
   font-weight: bold;
   font-family: Lucidatypewriter, monospace;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bold;  
-  
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
 }
 
 #startContainer {
@@ -31,21 +30,19 @@ body {
 
 #game-intro {
   display: none;
-  align-content: center;
-  padding: 10px 0px;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid;
+  margin-top:2%;
+  /*Screen Game Animation*/
   overflow: hidden;
   position: relative;
   background-image: url(../Images/game-screen.png);
   justify-content: center;
-  background-size: contain;
+  background-size: cover;
   animation: slide 5s linear infinite;
-  border-color: orangered;
-  border: 2px solid;
-  
+  /*adding elements*/
 }
-
-
-
 
 #end-game {
   display: none; /* seperating screens*/
@@ -72,11 +69,30 @@ body {
 }
 .endGameImage {
   border-radius: 5px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.fontFam {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#fontFam {
+  display: none;
+  flex-direction: row;
+  width:80%;
+  height: 30px;
+  justify-content: space-around;
+  align-items:center;
+  border: 2px solid; 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font: bold;
+}
+
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  /*aligning to the center*/
+  align-items: center;
+  justify-content:center;
+  align-content:center;
+  width:100%;
+  border: 2px solid 
 }
 
 #start-button,
@@ -94,7 +110,7 @@ body {
 
 #wrap {
   font-size: 18px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 #initialText {
