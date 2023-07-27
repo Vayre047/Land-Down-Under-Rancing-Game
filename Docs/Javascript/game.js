@@ -240,7 +240,6 @@ class Game {
 
   // Create a method responsible for ending the game
   endGame() {
-    console.log(this.lives);
     lives.innerHTML = this.lives ;
     
     //remove player
@@ -258,9 +257,13 @@ class Game {
 
     let score = parseInt(document.getElementById("score").innerHTML);
     let record = parseInt(document.getElementById("record").innerHTML);
-
-    if (score > record) {
+    if(!record){
       localStorage.setItem("record", score);
+      document.getElementById("record").innerHTML = score; 
+    }
+    else if (score > record) {
+      localStorage.setItem("record", score);
+      document.getElementById("record").innerHTML = score; 
     }
 
     // Hide game screen
