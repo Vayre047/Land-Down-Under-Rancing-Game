@@ -32,7 +32,7 @@ class Kangaroo {
 
   move() {
     // Move the obstacle down by 3px
-    this.top += 5;
+    this.top += 6;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
@@ -74,7 +74,7 @@ class KangarooJoey {
   move() {
     // Move the obstacle down by 3px
     //In order to move from right to left you need to decrement/decrease left values -=
-    this.left -= 3;
+    this.left -= 7;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
@@ -119,7 +119,7 @@ class RooRoo {
   move() {
     // Move the obstacle down by 3px
     //In order to move from left to right you need to increment left values +=
-    this.left += 3;
+    this.left += 6;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
