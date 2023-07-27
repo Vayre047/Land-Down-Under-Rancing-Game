@@ -250,6 +250,7 @@ class Game {
 
   // Create a method responsible for ending the game
   endGame() {
+    lives.innerHTML = this.lives ;
 
     //remove player
     this.player.element.remove();
@@ -273,6 +274,9 @@ class Game {
 
     // Hide game screen
     this.gameScreen.style.display = "none";
+
+    // If to hude the statusScreen uncoment below
+    //this.statusScreen.style.display = "none";
 
     // Show end game screen
     this.endScreen.style.display = "flex";
