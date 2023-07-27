@@ -12,7 +12,7 @@ class Kangaroo {
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "./Docs/Images/kangaroo.png";
+    this.element.src = "Docs/Images/kangaroo.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -53,7 +53,7 @@ class KangarooJoey {
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "./Docs/Images/roo.png";
+    this.element.src = "Docs/Images/roo.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -98,7 +98,7 @@ class RooRoo {
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "./Docs/Images/roo3.png";
+    this.element.src = "Docs/Images/roo3.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;

@@ -26,17 +26,17 @@ class Player {
     this.element.style.top = `${top}px`;
 
     this.gameScreen.appendChild(this.element);
-    // Adding sound effect upon collision with object   
-    this.sound = new Audio("./docs/sounds/oh_no.mp3")
+    // Adding sound effect upon collision with object
+    this.sound = new Audio("docs/sounds/oh_no.mp3")
   }
 
   move() {
     // Update player's car position based on directionX and directionY
       this.left += this.directionX;
       this.top += this.directionY;
-  
+
       // Ensure the player's car stays within the game screen
-  
+
       // handles right and left  side
       // offsetWidth returns the layout width as a number
       if (this.left + this.width > this.gameScreen.offsetWidth) {
@@ -53,7 +53,7 @@ class Player {
       else if (this.top < 0) {
         this.top = 0; // top border
       }
-  
+
       // Update the player's car position on the screen
       this.updatePosition();
   }
@@ -77,13 +77,13 @@ class Player {
     const obstacleRect = obstacle.element.getBoundingClientRect();
 
     if (
-        // checking if the player is "toucing" with the obstacle 
+        // checking if the player is "toucing" with the obstacle
       playerRect.left < obstacleRect.right &&
       playerRect.right > obstacleRect.left &&
       playerRect.top < obstacleRect.bottom &&
       playerRect.bottom > obstacleRect.top
     ) {
-        
+
         // audio file - connects to the audio upon collision with objects
         this.sound.play()
         // if the player collides return true

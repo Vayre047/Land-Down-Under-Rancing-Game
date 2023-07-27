@@ -61,13 +61,12 @@ class Game {
 
     // Implementing a backgroundMusic
     this.backgroundMusic = document.createElement("audio");
-    this.backgroundMusic.src = "./Docs/sounds/down_under.mp3";
+    this.backgroundMusic.src = "Docs/sounds/down_under.mp3";
     this.gameScreen.appendChild(this.backgroundMusic);
     this.backgroundMusic.play();
 
     if (localStorage.getItem("record") != 0) {
-      document.getElementById("record").innerHTML =
-        localStorage.getItem("record");
+      document.getElementById("record").innerHTML = localStorage.getItem("record");
     }
 
     // let local = localStorage.getItem("record");
