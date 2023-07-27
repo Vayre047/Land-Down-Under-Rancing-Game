@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
 #titleStartPage {
   text-align: center;
   font-size: 28px;
