@@ -4,7 +4,6 @@ window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restartButton");
  
-
   const endScreen = document.getElementById("end-game");
 
   let game;

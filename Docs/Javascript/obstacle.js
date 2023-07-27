@@ -38,7 +38,6 @@ class Kangaroo {
   }
 }
 
-
 // Implementing obstacle coming from right handside of the screen
 class KangarooJoey {
   constructor(gameScreen) {
@@ -79,8 +78,6 @@ class KangarooJoey {
     this.updatePosition();
   }
 }
-
-
 
 // Implementing obstacle coming from left handside of the screen to right
 class RooRoo {
