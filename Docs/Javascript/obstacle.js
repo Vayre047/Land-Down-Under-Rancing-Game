@@ -12,7 +12,7 @@ class Kangaroo {
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "../Docs/Images/kangaroo.png";
+    this.element.src = "./Docs/Images/kangaroo.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -53,7 +53,7 @@ class KangarooJoey {
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "../Docs/Images/roo.png";
+    this.element.src = "./Docs/Images/roo.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -90,15 +90,15 @@ class RooRoo {
     // creating a random positioning of the obstacle at the left handside of the screen
     this.left = 0; // in order to start at the left side
     // Determining the width and height of the obstacle
-    
-    // top refers to the height 
+
+    // top refers to the height
     this.top = Math.floor(Math.random() * 300 + 70);
     this.width = 100;
     this.height = 130;
     this.element = document.createElement("img");
 
     // creating the HTML element and default styling
-    this.element.src = "../Docs/Images/roo3.png";
+    this.element.src = "./Docs/Images/roo3.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -124,4 +124,3 @@ class RooRoo {
     this.updatePosition();
   }
 }
-
