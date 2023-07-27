@@ -36,7 +36,7 @@ class Game {
 
     this.score = 0;
 
-    this.lives = 1;
+    this.lives = 3;
 
     this.gameIsOver = false;
   }
