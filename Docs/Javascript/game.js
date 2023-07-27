@@ -183,12 +183,6 @@ class Game {
         this.joeysArray.splice(i, 1);
       }
     }
-
-    // If the lives are 0, end the game
-    if (this.lives === 0) {
-      this.endGame();
-    }
-
     //updating new joeys from joeys class, if there's no joeys in screen
     if (!this.joeysArray.length && !this.isPushingJoeys) {
       this.isPushingJoeys = true;
@@ -232,10 +226,6 @@ class Game {
       }
     }
 
-    if (this.lives === 0) {
-      this.endGame();
-    }
-
     //updating new rooroo from joeys class, if there's no rooroo in screen
     if (!this.rooRooArray.length && !this.isPushingRooRoo) {
       this.isPushingRooRoo = true;
@@ -250,6 +240,9 @@ class Game {
 
   // Create a method responsible for ending the game
   endGame() {
+    console.log(this.lives);
+    lives.innerHTML = this.lives ;
+    
     //remove player
     this.player.element.remove();
 
